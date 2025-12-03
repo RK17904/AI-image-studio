@@ -1,0 +1,295 @@
+/* --- BACKGROUND IMAGE --- */
+/* Light Mode Background */
+.min-vh-100 {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.115), rgba(18, 15, 15, 0.729)),
+                    url('/public/light.png');
+  background-size: cover;       
+  background-position: center;  
+  background-attachment: fixed; 
+  background-repeat: no-repeat;
+}
+
+/* Dark Mode Background */
+.dark-mode.min-vh-100 {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.115), rgba(18, 15, 15, 0.729)),
+                    url('/public/dark.png');
+}
+
+.card {
+  backdrop-filter: blur(10px); 
+  background-color: rgba(255, 255, 255, 0.85) !important; 
+}
+.dark-mode .card {
+  background-color: rgba(30, 30, 30, 0.85) !important; 
+}
+
+/* --- PAGE LOAD ANIMATION --- */
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(50px); 
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);    
+  }
+}
+
+.animate-slide-up {
+  animation: slideUpFade 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.textarea-no-resize {
+  resize: none;
+}
+
+.image-box {
+  min-height: 350px;
+}
+
+.spinner-large {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Adds a subtle transition to the button hover */
+.btn-transition {
+  transition: all 0.3s ease;
+}
+
+.btn-transition:hover {
+  transform: translateY(-2px);
+}
+
+.btn-transition:active {
+  transform: scale(0.98);
+}
+
+/* Fade-in animation for the image */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.image-fade-in {
+  animation: fadeInScale 0.5s ease-out forwards;
+}
+
+/* Dynamic glowing border */
+.glowing-border {
+  --border-gradient: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+  
+  position: relative;
+  border-radius: 0.5rem; /* Match Bootstrap's rounded-3 */
+  z-index: 1;
+}
+
+.glowing-border::before {
+  content: "";
+  position: absolute;
+  inset: -3px; 
+  background: var(--border-gradient);
+  border-radius: inherit;
+  z-index: -1;
+  filter: blur(5px);
+  opacity: 0.7;
+}
+
+
+.glowing-border .image-box {
+  background-color: #f8f9fa; 
+  border-radius: inherit;
+  z-index: 2;
+}
+
+.hover-scale {
+  transition: transform 0.2s ease;
+}
+
+.hover-scale:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+/* --- SIDEBAR GALLERY STYLES --- */
+/* The Sidebar Panel */
+.gallery-sidebar {
+  position: fixed;
+  top: 0;
+  right: -400px; /* Start off-screen */
+  width: 380px;
+  height: 100vh; /* Full height */
+  background-color: white;
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
+  z-index: 1050; 
+  transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto; /* Allow scrolling inside */
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-sidebar.open {
+  right: 0;
+}
+
+/* Overlay to darken background when sidebar is open */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1040;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(2px);
+}
+
+.sidebar-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Gallery Item Styling */
+.gallery-card {
+  transition: all 0.2s ease;
+  border: 1px solid #f0f0f0;
+}
+
+/* Hover Effect: Highlight Border & Pop */
+.gallery-card:hover {
+  transform: translateY(-3px);
+  border-color: #6366f1; 
+  box-shadow: 0 8px 15px rgba(99, 102, 241, 0.15);
+}
+
+.gallery-prompt {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #4b5563;
+}
+
+/* --- FLASH ANIMATION --- */
+@keyframes flash-animation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0; 
+    background-color: white; 
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Class to apply the animation */
+.animate-flash {
+  animation: flash-animation 0.3s ease-in-out forwards;
+}
+
+/* --- DARK MODE STYLES --- */
+.dark-mode {
+  background-color: #121212 !important; 
+  color: #e0e0e0 !important; 
+}
+
+/* Darken the main Card */
+.dark-mode .card {
+  background-color: #1e1e1e;
+  border-color: #333;
+  color: #fff;
+}
+
+/* Darken inputs */
+.dark-mode .form-control {
+  background-color: #2d2d2d;
+  border-color: #444;
+  color: #fff;
+}
+
+/* Fix text colors */
+.dark-mode .text-secondary {
+  color: #a0a0a0 !important;
+}
+
+.dark-mode .text-muted {
+  color: #888 !important;
+}
+
+.dark-mode .bg-light {
+  background-color: #121212 !important;
+}
+
+/* --- DARK MODE SIDEBAR --- */
+.dark-mode .gallery-sidebar {
+  background-color: #1e1e1e;
+  color: #fff;
+  border-left: 1px solid #333;
+}
+
+.dark-mode .gallery-sidebar .bg-light {
+  background-color: #1e1e1e !important; 
+  border-color: #333 !important;
+}
+
+/* Darken Gallery Cards */
+.dark-mode .gallery-card {
+  background-color: #2d2d2d !important;
+  border-color: #444;
+}
+
+.dark-mode .gallery-prompt {
+  color: #ccc;
+}
+
+.dark-mode .btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+/* --- DARK MODE INPUT --- */
+.dark-mode .form-control {
+  background-color: #2b2b2b !important;
+  border-color: #444 !important;
+  color: #e0e0e0 !important; 
+}
+
+/* Fix the Placeholder Text */
+.dark-mode .form-control::placeholder {
+  color: #888 !important; 
+  opacity: 1;
+}
+
+/* Focus State */
+.dark-mode .form-control:focus {
+  background-color: #333 !important;
+  color: #fff !important;
+  border-color: #6366f1 !important; 
+  box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.25) !important;
+}
+
+
+/* --- SMOOTH THEME TRANSITION --- */
+.min-vh-100,        /* Main Background */
+.card,              /* Main Card */
+.card-header,       /* Blue/Dark Header */
+.card-body,
+.form-control,      /* Inputs */
+.gallery-sidebar,   /* Sidebar Panel */
+.gallery-card,      /* Sidebar Items */
+.btn,               /* Buttons */
+h1, h2, h3, h4, h5, h6, 
+p, small, label, i, span {
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.4s ease;
+}
