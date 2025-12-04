@@ -10,7 +10,7 @@ app.use(helmet());
 
 // --- SECURITY ACTION 2: RESTRICT ACCESS (CORS) ---
 const allowedOrigins = [
-  'https://ai-image-studio.vercel.app', // Your Vercel Domain
+  'https://ai-image-studio-lake.vercel.app', 
   'http://localhost:5173' 
 ];
 
