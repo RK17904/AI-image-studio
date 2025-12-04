@@ -3,6 +3,8 @@
 > A professional, full-stack AI Image Generator that creates stunning visuals from text prompts. Free, unlimited, and packed with advanced UI features.
 
 ![Project Banner](client/public/image_1.png)
+---
+Visit official site:[AI Image Studio](https://ai-image-studio-lake.vercel.app/)
 
 ## 🚀 Overview
 
@@ -75,13 +77,13 @@ npm run dev
 
 ### Fork the Project
 
-# Create your Feature Branch (git checkout -b feature/AmazingFeature)
+#### Create your Feature Branch (git checkout -b feature/AmazingFeature)
 
-# Commit your Changes (git commit -m 'Add some AmazingFeature')
+#### Commit your Changes (git commit -m 'Add some AmazingFeature')
 
-# Push to the Branch (git push origin feature/AmazingFeature)
+#### Push to the Branch (git push origin feature/AmazingFeature)
 
-# Open a Pull Request
+#### Open a Pull Request
 ---
 ## 📄 License
 
