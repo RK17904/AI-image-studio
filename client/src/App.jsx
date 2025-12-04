@@ -304,12 +304,13 @@ function App() {
                   </div>
                 </div>
               </div>
+              {/* Card Footer (Copyright) */}
+              <div className="card-footer bg-transparent border-0 text-center pb-4 pt-0">
+                <small className="text-muted opacity-50">
+                  © 2025 <strong>Ravindu Kaveesha</strong>. All rights reserved.
+                </small>
+              </div>
             </div>
-              <footer className="text-center mt-5 mb-3 text-muted small animate-fade-in px-3">
-              <p className="mb-0 p-2 rounded-pill d-inline-block" style={{backgroundColor: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(5px)'}}>
-                © 2025 <strong>Ravindu Kaveesha</strong>. All rights reserved.
-              </p>
-            </footer>
           </div>
         </div>
       </div>
