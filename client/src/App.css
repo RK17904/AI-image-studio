@@ -122,14 +122,14 @@
 .gallery-sidebar {
   position: fixed;
   top: 0;
-  right: -400px; /* Start off-screen */
+  right: -400px; 
   width: 380px;
-  height: 100vh; /* Full height */
+  height: 100vh; 
   background-color: white;
   box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
   z-index: 1050; 
   transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  overflow-y: auto; /* Allow scrolling inside */
+  overflow-y: auto; 
   display: flex;
   flex-direction: column;
 }
